@@ -1,6 +1,6 @@
 name: golang-cli-starter
 owner: kikplate-public
-verification_token: verification_token: 0de5947f-8352-4536-ae13-e67015aaae9e
+verification_token: 0de5947f-8352-4536-ae13-e67015aaae9e
 description: A production-ready, well-structured Go CLI boilerplate using Cobra
 version: 1.0.0
 
