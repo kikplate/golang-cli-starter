@@ -1,0 +1,55 @@
+# {{ .projectName }}
+[![View on KikPlate](https://img.shields.io/static/v1?label=KikPlate&message={{ .kikplateSlug }}&color={{ .kikplateBadgeColor }}&style=flat-square)](https://kikplate.dev/plates/{{ .kikplateSlug }})
+
+{{ .projectDescription }}
+
+## Features
+
+- Cobra subcommand tree with persistent flags
+- Viper config with environment support
+- Zap structured logging with verbose mode
+- Build-time version injection via ldflags
+- Unit and command tests
+
+## Quick Start
+
+```bash
+go mod tidy
+make build
+./bin/{{ .binaryName }} --help
+```
+
+## Commands
+
+```bash
+{{ .binaryName }} greet Alice
+{{ .binaryName }} greet --name Bob --shout
+{{ .binaryName }} version
+```
+
+## Configuration
+
+Configuration precedence:
+
+1. CLI flags
+2. Environment variables (`{{ .envPrefix }}_*`)
+3. Config file (`$HOME/.{{ .binaryName }}.yaml` or `--config`)
+4. Defaults
+
+## Project Structure
+
+```text
+{{ .projectName }}/
+├── cmd/
+├── internal/
+├── pkg/
+├── Makefile
+├── go.mod
+└── main.go
+```
+
+## Test
+
+```bash
+make test
+```
