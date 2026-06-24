@@ -17,11 +17,11 @@ func Load(cfgFile string) error {
 			return fmt.Errorf("could not determine home directory: %w", err)
 		}
 		viper.AddConfigPath(filepath.Join(home))
-		viper.SetConfigName(".cliforge")
+		viper.SetConfigName(".{{ .binaryName }}")
 		viper.SetConfigType("yaml")
 	}
 
-	viper.SetEnvPrefix("CLIFORGE")
+	viper.SetEnvPrefix("{{ .envPrefix }}")
 	viper.AutomaticEnv()
 	if err := viper.ReadInConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {

@@ -3,8 +3,8 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/kikplate/golang-cli-starter/internal/logger"
-	"github.com/kikplate/golang-cli-starter/pkg/greeting"
+	"{{ .modulePath }}/internal/logger"
+	"{{ .modulePath }}/pkg/greeting"
 	"github.com/spf13/cobra"
 )
 
@@ -15,9 +15,9 @@ func newGreetCmd() *cobra.Command {
 		Long: `Greet prints a customizable greeting message.
 
 Example:
-  cliforge greet Alice
-  cliforge greet Alice --shout
-  cliforge greet --name Bob`,
+  {{ .binaryName }} greet Alice
+  {{ .binaryName }} greet Alice --shout
+  {{ .binaryName }} greet --name Bob`,
 		Args: cobra.MaximumNArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			name, _ := cmd.Flags().GetString("name")

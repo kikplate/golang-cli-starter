@@ -1,0 +1,79 @@
+name: golang-cli-starter
+owner: kikplate-public
+description: Production-ready Go CLI starter built with Cobra, Viper, and Zap.
+version: 1.0.0
+verification_token: 0de5947f-8352-4536-ae13-e67015aaae9e
+
+category: cli
+
+tags:
+  - cli
+  - golang
+  - cobra
+  - starter
+  - boilerplate
+  - developer-tools
+
+schema:
+  projectName:
+    type: string
+    default: golang-cli-starter
+  modulePath:
+    type: string
+    default: github.com/kikplate/golang-cli-starter
+  projectDescription:
+    type: string
+    default: Production-ready Go CLI starter built with Cobra, Viper, and Zap.
+  binaryName:
+    type: string
+    default: cliforge
+  goVersion:
+    type: string
+    default: "1.26.2"
+  envPrefix:
+    type: string
+    default: CLIFORGE
+  kikplateSlug:
+    type: string
+    default: golang-cli-starter
+  kikplateBadgeColor:
+    type: string
+    default: 0366d6
+
+modules:
+  tests:
+    enabled: true
+
+files:
+  - path: .gitignore
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/.gitignore.tmpl
+  - path: LICENSE
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/LICENSE.tmpl
+  - path: Makefile
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/Makefile.tmpl
+  - path: README.md
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/README.md.tmpl
+  - path: go.mod
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/go.mod.tmpl
+  - path: go.sum
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/go.sum.tmpl
+  - path: main.go
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/main.go.tmpl
+  - path: cmd/root.go
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/cmd/root.go.tmpl
+  - path: cmd/greet.go
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/cmd/greet.go.tmpl
+  - path: cmd/version.go
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/cmd/version.go.tmpl
+  - path: cmd/root_test.go
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/cmd/root_test.go.tmpl
+    condition: modules.tests.enabled
+  - path: internal/config/config.go
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/internal/config/config.go.tmpl
+  - path: internal/logger/logger.go
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/internal/logger/logger.go.tmpl
+  - path: pkg/greeting/greeting.go
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/pkg/greeting/greeting.go.tmpl
+  - path: pkg/greeting/greeting_test.go
+    template: https://raw.githubusercontent.com/kikplate/golang-cli-starter/main/templates/pkg/greeting/greeting_test.go.tmpl
+    condition: modules.tests.enabled
